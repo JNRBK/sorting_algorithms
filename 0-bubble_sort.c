@@ -23,19 +23,19 @@ void bubble_sort(int *array, size_t size)
 	size_t j, i;
 	int swp;
 
+	if (!array || size < 2)
+	{
+		return;
+	}
 	for (j = 0; j < size - 1; j++)
 	{
 		swp = 0;
 		for (i = 0; i < size - j - 1; i++)
 			if (array[i] > array[i + 1])
 			{
-				swap(&array[i], &array[i + 1]);
+				swap(array + i, array + i + 1);
 				print_array(array, size);
 				swp = 1;
 			}
-	}
-	if (!swp)
-	{
-		return;
 	}
 }
